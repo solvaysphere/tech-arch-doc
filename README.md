@@ -1,18 +1,84 @@
 ---
 home: true
-heroImage: /images/index-read.gif
-actionText: 快速开始 →
-actionLink: /md/java/basic/java-basic-oop.md
+title: Home
+heroImage: /images/hero.png
+actions:
+  - text: Get Started
+    link: /guide/getting-started.html
+    type: primary
+  - text: Introduction
+    link: /guide/
+    type: secondary
 features:
-- title: 夯实基础
-  details: 不积跬步无以至千里, 仰望星空还需脚踏实地
-- title: 构建体系
-  details: 告别碎片化学习，帮助你构筑你自己的知识体系
-- title: 全栈开发
-  details: 以Java开发为背景，全栈开发，DevOps
-footer: © 2023-present lanternfish
+  - title: Simplicity First
+    details: Minimal setup with markdown-centered project structure helps you focus on writing.
+  - title: Vue-Powered
+    details: Enjoy the dev experience of Vue, use Vue components in markdown, and develop custom themes with Vue.
+  - title: Performant
+    details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
+  - title: Themes
+    details: Providing a default theme out of the box. You can also choose a community theme or create your own one.
+  - title: Plugins
+    details: Flexible plugin API, allowing plugins to provide lots of plug-and-play features for your site.
+  - title: Bundlers
+    details: Default bundler is Vite, while Webpack is also supported. Choose the one you like!
+footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 
-# Vssue Demo For VuePress
+### As Easy as 1, 2, 3
 
-<Vssue title="Vssue Demo" />
+<CodeGroup>
+  <CodeGroupItem title="PNPM" active>
+
+```bash
+# install in your project
+pnpm add -D vuepress@next @vuepress/client@next vue
+
+# create a markdown file
+echo '# Hello VuePress' > README.md
+
+# start writing
+pnpm vuepress dev
+
+# build to static files
+pnpm vuepress build
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="YARN">
+
+```bash
+# install in your project
+yarn add -D vuepress@next
+
+# create a markdown file
+echo '# Hello VuePress' > README.md
+
+# start writing
+yarn vuepress dev
+
+# build to static files
+yarn vuepress build
+```
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="NPM">
+  
+```bash
+# install in your project
+npm install -D vuepress@next
+
+# create a markdown file
+echo '# Hello VuePress' > README.md
+
+# start writing
+npx vuepress dev
+
+# build to static files
+npx vuepress build
+```
+
+  </CodeGroupItem>
+</CodeGroup>
