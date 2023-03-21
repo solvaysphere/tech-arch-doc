@@ -141,12 +141,3 @@ npm run docs:dev
 VuePress will start a hot-reloading development server at [http://localhost:8080](http://localhost:8080). When you modify your markdown files, the content in the browser will be auto updated.
 
 By now, you should have a basic but functional VuePress documentation site. Next, learn about the basics of [configuration](./configuration.md) in VuePress.
-
-```md
-<!-- Markdown 目录语法 -->
-[[toc]]
-
-<!-- Vue 目录组件 -->
-Prerequisites
-<Toc />
-```

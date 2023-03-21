@@ -1,4 +1,3 @@
-// @ts-ignore
 import process from 'node:process'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { webpackBundler } from '@vuepress/bundler-webpack'
@@ -9,20 +8,6 @@ import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { defaultTheme } from '@vuepress/theme-default'
 import { getDirname, path } from '@vuepress/utils'
-import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
-import { copyrightPlugin } from 'vuepress-plugin-copyright2'
-import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
-import { containerPlugin } from '@vuepress/plugin-container'
-import { nprogressPlugin } from '@vuepress/plugin-nprogress'
-import { pwaPlugin } from '@vuepress/plugin-pwa'
-import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup'
-import { prismjsPlugin } from '@vuepress/plugin-prismjs'
-import { tocPlugin } from '@vuepress/plugin-toc'
-import { commentPlugin } from "vuepress-plugin-comment2";
-import { copyCodePlugin } from "vuepress-plugin-copy-code2";
-import { clipboardPlugin } from 'vuepress-plugin-clipboard'
-import { sitemapPlugin } from "vuepress-plugin-sitemap2";
-
 import {
   head,
   navbarEn,
@@ -31,14 +16,13 @@ import {
   sidebarZh,
 } from './configs/index.js'
 
-// @ts-ignore
 const __dirname = getDirname(import.meta.url)
 const isProd = process.env.NODE_ENV === 'production'
 
 export default defineUserConfig({
   // 指定开发服务器的端口号
-  port: 3000,
-
+  port: '3000',
+  
   // 指定 vuepress build 命令的输出目录
   dest: 'docs',
 
@@ -146,9 +130,9 @@ export default defineUserConfig({
   // use plugins
   plugins: [
     docsearchPlugin({
-      appId: 'M3NOA7FQ6H',
-      apiKey: 'e1af25fc4f5f27650c994714106c07f7',
-      indexName: 'lanternfish',
+      appId: '34YFD9IUQ2',
+      apiKey: '9a9058b8655746634e01071411c366b8',
+      indexName: 'vuepress',
       searchParameters: {
         facetFilters: ['tags:v2'],
       },
@@ -205,66 +189,5 @@ export default defineUserConfig({
     }),
     // only enable shiki plugin in production mode
     isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
-    backToTopPlugin(),
-    copyrightPlugin({
-      author: "Lanternfish",
-      license: "MIT",
-      canonical: "https://docs.lanternfish.cn",
-      global: true,
-    }),
-    mediumZoomPlugin({
-      // options
-    }),
-    containerPlugin({
-      type: 'tip',
-      locales: {
-        '/': {
-          defaultInfo: 'TIP',
-        },
-        '/zh/': {
-          defaultInfo: '提示',
-        },
-      }
-    }),
-    nprogressPlugin(),
-    pwaPlugin({
-      // options
-    }),
-    pwaPopupPlugin({
-      locales: {
-        '/': {
-          message: 'New content is available.',
-          buttonText: 'Refresh',
-        },
-        '/zh/': {
-          message: '发现新内容可用',
-          buttonText: '刷新',
-        },
-      },
-    }),
-    prismjsPlugin({
-      preloadLanguages: ['markdown', 'jsdoc', 'yaml']
-    }),
-    tocPlugin({
-      // optins
-    }),
-    // @ts-ignore
-    commentPlugin({
-      // your options
-      provider: "Giscus",
-    }),
-    // copyCodePlugin({
-    //   // your options
-    // }),
-    // @ts-ignore
-    clipboardPlugin({
-      staticIcon: true,
-      align: 'top'
-    }),
-    /** @see: https://vuepress-theme-hope.github.io/v2/sitemap/ */
-    sitemapPlugin({
-      hostname: 'https://docs.lanternfish.cn',
-      excludeUrls: ['/changelog.html', '/404.html'],
-    }),
   ],
 })
